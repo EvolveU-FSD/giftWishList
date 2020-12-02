@@ -13,13 +13,17 @@ export default function FamilyView({setSelectedFamilyMemberFunction}){
     }, [])
 
     return <div className="App">
-        <div style={{color: 'green'}} >
+        <div style={{color: 'white', fontSize: 24, fontWeight: 'bold', padding: 20, backgroundColor: 'darkgreen'}} >
             Welcome to Gift Exchange
+        </div>
+        <div style={{backgroundColor: 'green', height: '100vh', display: 'flex', justifyContent: 'center'}}>
+            <div style={{width: 500, backgroundColor: 'white'}}>
             {
                 familyMembers.map((member, index) => {
                     return <FamilyMember member={member} key={index} setSelectedFamilyMemberFunction={setSelectedFamilyMemberFunction} />
                 })
             }
+            </div>
         </div>
     </div>
   }
@@ -31,7 +35,7 @@ export default function FamilyView({setSelectedFamilyMemberFunction}){
         setSelectedFamilyMemberFunction(familyMember)
     }
 
-    return <div style={{margin: 20}} onClick={selectFamilyMember}>
+    return <div style={{margin: 20, fontSize: 20, color: 'darkgreen', fontWeight: 'bold'}} onClick={selectFamilyMember}>
         {familyMember.name}
     </div>
   }
